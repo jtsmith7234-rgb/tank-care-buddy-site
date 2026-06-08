@@ -4,7 +4,11 @@
 
 (function () {
   // ── LOGO IMAGE ──────────────────────────────────────────────────
-  const LOGO_SVG = `<img class="site-logo-mark" src="icon-96.png" width="36" height="36" alt="Tank Care Buddy logo" loading="eager" decoding="async" draggable="false" style="border-radius:8px;display:block;flex-shrink:0;">`;
+  // Use absolute URL so the icon loads correctly from every page on the site
+  const _iconSrc = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'icon-96.png'
+    : 'https://tankcarebuddy.com/icon-96.png';
+  const LOGO_SVG = `<img class="site-logo-mark" src="${_iconSrc}" width="36" height="36" alt="Tank Care Buddy logo" loading="eager" decoding="async" draggable="false" style="border-radius:8px;display:block;flex-shrink:0;">`;
 
   // ── DETECT CURRENT PAGE ───────────────────────────────────────
   const path = window.location.pathname.split('/').pop() || 'index.html';
