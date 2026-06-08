@@ -3,27 +3,8 @@
    ============================================================ */
 
 (function () {
-  // ── LOGO SVG ──────────────────────────────────────────────────
-  const LOGO_SVG = `
-    <svg class="site-logo-mark" width="32" height="32" viewBox="0 0 32 32"
-         fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-      <!-- Tank outline -->
-      <rect x="4" y="10" width="24" height="17" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
-      <!-- Water fill -->
-      <rect x="5" y="17" width="22" height="9" rx="2" fill="currentColor" opacity="0.15"/>
-      <!-- Water ripple line -->
-      <path d="M6 17 Q10 15 14 17 Q18 19 22 17 Q25 15 27 17"
-            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
-      <!-- Fish body -->
-      <ellipse cx="15" cy="13" rx="4" ry="2.2" fill="currentColor" opacity="0.9"/>
-      <!-- Fish tail -->
-      <path d="M19 13 L22.5 10.5 L22.5 15.5 Z" fill="currentColor" opacity="0.7"/>
-      <!-- Fish eye -->
-      <circle cx="13" cy="12.5" r="0.7" fill="var(--color-bg, #f4f7f7)"/>
-      <!-- Bubbles -->
-      <circle cx="11" cy="8"  r="1"   stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.5"/>
-      <circle cx="14" cy="6"  r="0.7" stroke="currentColor" stroke-width="1.1" fill="none" opacity="0.4"/>
-    </svg>`;
+  // ── LOGO IMAGE ──────────────────────────────────────────────────
+  const LOGO_SVG = `<img class="site-logo-mark" src="icon-96.png" width="36" height="36" alt="Tank Care Buddy logo" loading="eager" decoding="async" draggable="false" style="border-radius:8px;display:block;flex-shrink:0;">`;
 
   // ── DETECT CURRENT PAGE ───────────────────────────────────────
   const path = window.location.pathname.split('/').pop() || 'index.html';
