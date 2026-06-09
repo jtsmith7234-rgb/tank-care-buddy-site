@@ -218,7 +218,19 @@ button { cursor: pointer; background: none; border: none; }
   color: var(--color-text);
   flex-shrink: 0;
 }
-.site-logo-mark { flex-shrink: 0; }
+.site-logo-mark { flex-shrink: 0; display: block; width: 22px; height: 22px; object-fit: contain; }
+.site-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: var(--color-primary, #007878);
+  box-shadow: 0 1px 4px rgba(0,60,60,0.18);
+  overflow: hidden;
+}
 .site-logo-text {
   font-family: var(--font-display);
   font-size: var(--text-sm);
