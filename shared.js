@@ -6,9 +6,9 @@
   // ── LOGO IMAGE ──────────────────────────────────────────────────
   // Use absolute URL so the icon loads correctly from every page on the site
   const _iconSrc = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-    ? 'header-icon.png'
-    : 'https://tankcarebuddy.com/header-icon.png';
-  const LOGO_SVG = `<span class="site-logo-wrap" aria-hidden="true"><img class="site-logo-mark" src="${_iconSrc}" width="22" height="22" alt="" loading="eager" decoding="async" draggable="false"></span>`;
+    ? 'apple-touch-icon.png'
+    : 'https://tankcarebuddy.com/apple-touch-icon.png';
+  const LOGO_SVG = `<img class="site-logo-mark" src="${_iconSrc}" width="32" height="32" alt="Tank Care Buddy" loading="eager" decoding="async" draggable="false">`;
 
   // ── DETECT CURRENT PAGE ───────────────────────────────────────
   const path = window.location.pathname.split('/').pop() || 'index.html';
