@@ -1004,3 +1004,137 @@ button { cursor: pointer; background: none; border: none; }
 .mt-8  { margin-top: var(--space-8); }
 .mt-10 { margin-top: var(--space-10); }
 .gap-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+
+/* ── SOCIAL SECTION ──────────────────────────────────────────── */
+.social-section {
+  background: var(--color-bg);
+}
+
+.social-title {
+  margin-inline: auto;
+  max-width: 20ch;
+}
+
+.social-sub {
+  margin-inline: auto;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-10);
+}
+
+.social-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-6);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: box-shadow var(--trans), transform var(--trans), border-color var(--trans);
+  position: relative;
+}
+.social-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  color: var(--color-text);
+}
+.social-card:active {
+  transform: scale(0.98);
+}
+
+/* Primary card — Tank Care Buddy brand color */
+.social-card:not(.social-card--secondary) .social-card-icon {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+[data-theme="dark"] .social-card:not(.social-card--secondary) .social-card-icon {
+  background: #102828;
+}
+
+/* Secondary card — Pop Umbrella, visually quieter */
+.social-card--secondary {
+  opacity: 0.75;
+  border-style: dashed;
+}
+.social-card--secondary:hover {
+  opacity: 1;
+  border-style: solid;
+}
+.social-card--secondary .social-card-icon {
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+}
+
+.social-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--trans);
+}
+
+.social-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+}
+
+.social-card-platform {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.social-card-handle {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.social-card-note {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  margin-left: auto;
+  margin-right: var(--space-3);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.social-card-arrow {
+  color: var(--color-text-faint);
+  transition: color var(--trans), transform var(--trans);
+  flex-shrink: 0;
+}
+.social-card:hover .social-card-arrow {
+  color: var(--color-primary);
+  transform: translate(2px, -2px);
+}
+
+.social-footnote {
+  margin-top: var(--space-6);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  max-width: none;
+}
