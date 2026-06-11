@@ -4,11 +4,11 @@
 
 (function () {
   // ── LOGO IMAGE ──────────────────────────────────────────────────
-  // Use absolute URL so the icon loads correctly from every page on the site
-  const _iconSrc = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-    ? 'apple-touch-icon.png'
-    : 'https://tankcarebuddy.com/apple-touch-icon.png';
-  const LOGO_SVG = `<img class="site-logo-mark" src="${_iconSrc}" width="32" height="32" alt="Tank Care Buddy" loading="eager" decoding="async" draggable="false">`;
+  // Use absolute URL so the logo mark loads correctly from every page on the site.
+  // Default: teal mark (dark on light). CSS swaps to logo-mark-light.png on dark theme.
+  const _isLocal = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+  const _iconSrc = _isLocal ? 'logo-mark-dark.png' : 'https://tankcarebuddy.com/logo-mark-dark.png';
+  const LOGO_SVG = `<img class="site-logo-mark" src="${_iconSrc}" width="28" height="28" alt="" aria-hidden="true" loading="eager" decoding="async" draggable="false">`;
 
   // ── DETECT CURRENT PAGE ───────────────────────────────────────
   const path = window.location.pathname.split('/').pop() || 'index.html';

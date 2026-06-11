@@ -221,11 +221,23 @@ button { cursor: pointer; background: none; border: none; }
 .site-logo-mark {
   flex-shrink: 0;
   display: block;
-  width: 32px;
-  height: 32px;
-  border-radius: 7px;
-  object-fit: cover;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  object-fit: contain;
+  box-shadow: none;
+  /* Default src is logo-mark-dark.png (teal mark) for light theme.
+     Dark theme overrides to the white mark via content-swap below. */
+}
+
+/* Dark theme: swap to the white logo mark so it reads on the dark header */
+[data-theme="dark"] .site-logo-mark {
+  content: url('logo-mark-light.png');
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .site-logo-mark {
+    content: url('logo-mark-light.png');
+  }
 }
 .site-logo-text {
   font-family: var(--font-display);
