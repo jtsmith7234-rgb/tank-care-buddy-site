@@ -4,9 +4,11 @@
 
 (function () {
   // ── LOGO MARK ─────────────────────────────────────────────────
-  // Inline SVG tank+fish brand mark — rectangle tank with fish inside.
-  // Inherits currentColor so it auto-adapts to light and dark themes.
-  const LOGO_SVG = `<svg class="site-logo-mark" viewBox="0 0 56 44" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="53" height="41" rx="4" ry="4" stroke-width="3"/><path d="M1.5 10 Q10 7.5 18 10 Q26 12.5 34 10 Q42 7.5 54.5 10" stroke-width="2"/><ellipse cx="30" cy="28" rx="12" ry="7" stroke-width="2.2"/><path d="M18 28 L11 21 M18 28 L11 35" stroke-width="2.2"/><circle cx="40" cy="25.5" r="1.8" fill="currentColor" stroke="none"/></svg>`;
+  // Actual brand mark extracted from the app icon (white mark, transparent bg).
+  // CSS filter handles theme contrast: invert(1) on light, none on dark.
+  const _isLocal = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+  const _markSrc = _isLocal ? 'logo-mark.png' : 'https://tankcarebuddy.com/logo-mark.png';
+  const LOGO_SVG = `<img class="site-logo-mark" src="${_markSrc}" alt="" aria-hidden="true" draggable="false">`;
 
   // ── DETECT CURRENT PAGE ───────────────────────────────────────
   const path = window.location.pathname.split('/').pop() || 'index.html';

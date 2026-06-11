@@ -221,13 +221,22 @@ button { cursor: pointer; background: none; border: none; }
 .site-logo-mark {
   flex-shrink: 0;
   display: block;
-  /* Tank+fish brand mark, viewBox 56x44.
-     20px tall keeps it proportional to the --text-sm logo text
-     while reading as a brand mark, not a UI icon. */
-  width: 26px;
+  /* Brand mark PNG (116x96 native, white mark on transparent bg).
+     Rendered at 24x20px to sit proportionally with the --text-sm logo text.
+     CSS filter handles theme contrast. */
+  width: 24px;
   height: 20px;
-  color: inherit;
-  overflow: visible;
+  object-fit: contain;
+  /* Light theme default: invert white mark to dark */
+  filter: invert(1);
+}
+[data-theme="dark"] .site-logo-mark {
+  filter: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .site-logo-mark {
+    filter: none;
+  }
 }
 .site-logo-text {
   font-family: var(--font-display);
