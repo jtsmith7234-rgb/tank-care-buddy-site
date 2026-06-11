@@ -3,12 +3,10 @@
    ============================================================ */
 
 (function () {
-  // ── LOGO IMAGE ──────────────────────────────────────────────────
-  // Use absolute URL so the logo mark loads correctly from every page on the site.
-  // Default: teal mark (dark on light). CSS swaps to logo-mark-light.png on dark theme.
-  const _isLocal = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-  const _iconSrc = _isLocal ? 'logo-mark-dark.png' : 'https://tankcarebuddy.com/logo-mark-dark.png';
-  const LOGO_SVG = `<img class="site-logo-mark" src="${_iconSrc}" width="28" height="28" alt="" aria-hidden="true" loading="eager" decoding="async" draggable="false">`;
+  // ── LOGO MARK ─────────────────────────────────────────────────
+  // Inline SVG fish mark — inherits currentColor from the parent link/span.
+  // No PNG, no background, no border. Automatically matches any theme color.
+  const LOGO_SVG = `<svg class="site-logo-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 12c0-3.5 3-6.5 8-6.5 2 0 3.5.5 4.5 1L22 12l-3 5.5c-1 .5-2.5 1-4.5 1-5 0-8-3-8-6.5z"/><path d="M6.5 12C4 10.5 2 9.5 2 9.5c0 0 .5 1.5.5 2.5S2 14.5 2 14.5c0 0 2-1 4.5-2.5z"/><circle cx="16" cy="10.5" r="1" fill="currentColor" stroke="none"/></svg>`;
 
   // ── DETECT CURRENT PAGE ───────────────────────────────────────
   const path = window.location.pathname.split('/').pop() || 'index.html';
