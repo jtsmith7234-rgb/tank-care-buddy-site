@@ -221,12 +221,12 @@ button { cursor: pointer; background: none; border: none; }
 .site-logo-mark {
   flex-shrink: 0;
   display: block;
-  /* Match the cap-height of the 14-16px logo text (--text-sm, Plus Jakarta Sans 700).
-     15px sits just above cap-height for optical balance in a brand lockup. */
-  width: 15px;
-  height: 15px;
+  /* Tank+fish brand mark, viewBox 56x44.
+     20px tall keeps it proportional to the --text-sm logo text
+     while reading as a brand mark, not a UI icon. */
+  width: 26px;
+  height: 20px;
   color: inherit;
-  stroke: currentColor;
   overflow: visible;
 }
 .site-logo-text {
