@@ -149,6 +149,11 @@ body {
   background-color: var(--color-bg);
 }
 
+/* v20260622: match app Fix 1 — eliminate 300ms tap delay on all interactive elements */
+button, a, [role="button"] {
+  touch-action: manipulation;
+}
+
 img, svg { display: block; max-width: 100%; height: auto; }
 ul[role="list"], ol[role="list"] { list-style: none; }
 input, button, textarea, select { font: inherit; color: inherit; }
@@ -669,10 +674,19 @@ button { cursor: pointer; background: none; border: none; }
 }
 
 .audience-icon {
-  font-size: 1.5rem;
+  /* v20260622: was emoji font-size; now an SVG icon container matching .feature-icon style */
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
+  color: var(--color-primary);
+  margin-top: 0;
 }
+[data-theme="dark"] .audience-icon { background: #102828; }
 
 .audience-card h3 {
   font-size: var(--text-base);
