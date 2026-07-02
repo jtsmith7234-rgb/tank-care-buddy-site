@@ -64,7 +64,7 @@
             <a href="support.html">Support</a>
             <a href="privacy.html">Privacy Policy</a>
             <a href="faq.html">FAQ</a>
-            <a href="mailto:tankcarebuddy@outlook.com">tankcarebuddy@outlook.com</a>
+            <a href="mailto:support@tankcarebuddy.com">support@tankcarebuddy.com</a>
           </nav>
         </div>
         <div class="footer-copy">
