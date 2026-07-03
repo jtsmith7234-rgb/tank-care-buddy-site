@@ -1,6 +1,6 @@
 /* ============================================================
    Tank Care Buddy — Waitlist / Launch CTA
-   v20260702d
+   v20260702e
 
    HOW TO SWITCH MODES LATER:
    ─────────────────────────
@@ -188,8 +188,9 @@
 
       _setSubmitState(submit, 'idle');
       _showSuccess();
-      // Auto-close after 2.5 seconds so the modal disappears cleanly
-      setTimeout(_closeModal, 2500);
+      _showToast('Got it! — You’re on the list ✔️');
+      // Auto-close after 2.8 seconds so the modal disappears cleanly
+      setTimeout(_closeModal, 2800);
 
     } catch (err) {
       _setSubmitState(submit, 'idle');
@@ -227,6 +228,33 @@
 
   function _validEmail(v) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  // ── TOAST NOTIFICATION ───────────────────────────────────────────
+  function _showToast(msg) {
+    // Remove any existing toast
+    const old = document.getElementById('tcb-toast');
+    if (old) old.remove();
+
+    const toast = document.createElement('div');
+    toast.id = 'tcb-toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+
+    // Trigger fade-in
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        toast.classList.add('tcb-toast--visible');
+      });
+    });
+
+    // Fade out and remove after 3 seconds
+    setTimeout(function () {
+      toast.classList.remove('tcb-toast--visible');
+      setTimeout(function () { toast.remove(); }, 400);
+    }, 3000);
   }
 
 })();
