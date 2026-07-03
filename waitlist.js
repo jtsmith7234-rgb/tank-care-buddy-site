@@ -1,6 +1,6 @@
 /* ============================================================
    Tank Care Buddy — Waitlist / Launch CTA
-   v20260702c
+   v20260702d
 
    HOW TO SWITCH MODES LATER:
    ─────────────────────────
@@ -146,7 +146,7 @@
     if (errEl)   { errEl.textContent = ''; }
     if (def)     { def.hidden = false; }
     if (success) { success.hidden = true; }
-    if (submit)  { _setSubmitState(submit, 'idle'); }
+    if (submit)  { _setSubmitState(submit, 'idle'); delete submit.dataset.submitted; }
   }
 
   // ── FORM SUBMISSION ──────────────────────────────────────────────
@@ -167,6 +167,9 @@
     if (errEl) errEl.textContent = '';
     if (emailInput) emailInput.removeAttribute('aria-invalid');
 
+    // Lock immediately — prevents double-tap / multiple submissions
+    if (submit && submit.dataset.submitted === 'true') return;
+    if (submit) submit.dataset.submitted = 'true';
     _setSubmitState(submit, 'loading');
 
     try {
@@ -185,6 +188,8 @@
 
       _setSubmitState(submit, 'idle');
       _showSuccess();
+      // Auto-close after 2.5 seconds so the modal disappears cleanly
+      setTimeout(_closeModal, 2500);
 
     } catch (err) {
       _setSubmitState(submit, 'idle');
