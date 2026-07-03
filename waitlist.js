@@ -1,6 +1,6 @@
 /* ============================================================
    Tank Care Buddy — Waitlist / Launch CTA
-   v20260702b
+   v20260702c
 
    HOW TO SWITCH MODES LATER:
    ─────────────────────────
@@ -21,7 +21,7 @@
 
   // Formspree endpoint — replace XXXXXXXX with your real form ID after creating one at formspree.io
   // Until configured, the form falls back to a mailto: link automatically
-  const FORMSPREE_ID  = 'XXXXXXXX';
+  const FORMSPREE_ID  = 'mvzjvdrz';
 
   // ── PUBLIC API ───────────────────────────────────────────────────
   window.TCB = window.TCB || {};
@@ -90,7 +90,7 @@
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <h2 class="wl-heading" id="wl-heading-success">You're on the list</h2>
-          <p class="wl-body-text">I'll email you when Tank Care Buddy is live on the App Store.</p>
+          <p class="wl-body-text">I'll email you when Tank Care Buddy is available on the App Store.</p>
           <button class="btn btn-ghost" id="tcb-wl-done" style="margin-top:1.5rem">Done</button>
         </div>
       </div>
@@ -171,20 +171,17 @@
 
     try {
       // ── Formspree submission ──
-      if (FORMSPREE_ID && FORMSPREE_ID !== 'XXXXXXXX') {
-        const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
-          method:  'POST',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body:    JSON.stringify({ email: email, _subject: 'Tank Care Buddy — Launch Waitlist' })
-        });
-        if (!res.ok) throw new Error('Formspree error ' + res.status);
-      } else {
-        // ── Fallback: mailto (opens mail client) ──
-        window.location.href = 'mailto:support@tankcarebuddy.com'
-          + '?subject=' + encodeURIComponent('Tank Care Buddy — Notify me at launch')
-          + '&body='    + encodeURIComponent('Please add me to the launch list: ' + email);
-        // Still show success so the UX isn't a dead end
-      }
+      const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+        method:  'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email:    email,
+          _subject: 'Email added to waiting list',
+          _replyto: email,
+          _gotcha:  ''   // honeypot — bots fill this, Formspree discards the submission
+        })
+      });
+      if (!res.ok) throw new Error('Formspree error ' + res.status);
 
       _setSubmitState(submit, 'idle');
       _showSuccess();
