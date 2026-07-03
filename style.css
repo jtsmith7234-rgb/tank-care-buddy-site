@@ -1152,3 +1152,255 @@ button { cursor: pointer; background: none; border: none; }
   color: var(--color-text-faint);
   max-width: none;
 }
+
+/* ── HERO COMING-SOON LINE ───────────────────────────────────── */
+.hero-coming-soon {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-text-faint);
+  margin-top: calc(-1 * var(--space-8));   /* pulls up tight below hero-actions */
+  margin-bottom: var(--space-12);
+  text-align: center;
+}
+
+/* ── WAITLIST MODAL ──────────────────────────────────────────── */
+#tcb-waitlist-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;         /* slide-up on mobile */
+  justify-content: center;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0s linear 280ms;
+}
+#tcb-waitlist-modal[aria-hidden="false"] {
+  pointer-events: auto;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+/* Backdrop */
+.wl-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  opacity: 0;
+  transition: opacity 260ms ease;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+#tcb-waitlist-modal[aria-hidden="false"] .wl-backdrop {
+  opacity: 1;
+}
+
+/* Panel */
+.wl-panel {
+  position: relative;
+  z-index: 1;
+  background: var(--color-surface);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  padding: var(--space-8) var(--space-6) calc(var(--space-8) + env(safe-area-inset-bottom));
+  width: 100%;
+  max-width: 480px;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(100%);
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+#tcb-waitlist-modal[aria-hidden="false"] .wl-panel {
+  transform: translateY(0);
+}
+
+/* On desktop — centered dialog instead of slide-up */
+@media (min-width: 600px) {
+  #tcb-waitlist-modal {
+    align-items: center;
+  }
+  .wl-panel {
+    border-radius: var(--radius-xl);
+    padding: var(--space-10) var(--space-8);
+    max-width: 440px;
+    transform: scale(0.95) translateY(8px);
+    opacity: 0;
+    transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
+                opacity   240ms ease;
+  }
+  #tcb-waitlist-modal[aria-hidden="false"] .wl-panel {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Close button */
+.wl-close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  transition: background var(--trans), color var(--trans);
+}
+.wl-close:hover {
+  background: var(--color-border);
+  color: var(--color-text);
+}
+
+/* Body shared */
+.wl-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Icon */
+.wl-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-xl);
+  background: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin-bottom: var(--space-5);
+}
+[data-theme="dark"] .wl-icon { background: #102828; }
+
+/* Heading */
+.wl-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+  max-width: 26ch;
+}
+
+/* Body text */
+.wl-body-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 34ch;
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+}
+
+/* Form */
+.wl-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.wl-field-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.wl-input {
+  width: 100%;
+  padding: 0.75em 1em;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+  transition: border-color var(--trans), box-shadow var(--trans);
+  outline: none;
+  -webkit-appearance: none;
+}
+.wl-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+.wl-input[aria-invalid="true"] {
+  border-color: #c0392b;
+}
+.wl-input::placeholder { color: var(--color-text-faint); }
+
+/* Error message */
+.wl-error {
+  font-size: var(--text-xs);
+  color: #c0392b;
+  min-height: 1.2em;
+  text-align: left;
+  max-width: none;
+}
+[data-theme="dark"] .wl-error { color: #e57373; }
+
+/* Submit button */
+.wl-submit {
+  width: 100%;
+  padding: 0.8em 1.6em;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  transition: background var(--trans), transform 120ms, box-shadow var(--trans);
+  box-shadow: 0 2px 8px rgba(0,120,120,0.25);
+  min-height: 52px;
+}
+.wl-submit:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  box-shadow: 0 4px 16px rgba(0,120,120,0.3);
+}
+.wl-submit:active:not(:disabled) { transform: scale(0.97); }
+.wl-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+.wl-submit-text { transition: opacity 150ms; }
+
+/* Spinner */
+.wl-submit-spinner {
+  display: none;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: wl-spin 0.7s linear infinite;
+}
+@keyframes wl-spin { to { transform: rotate(360deg); } }
+
+/* Trust note */
+.wl-trust {
+  margin-top: var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  max-width: none;
+}
+
+/* Success state */
+.wl-success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-success-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-success);
+  margin-bottom: var(--space-5);
+}
