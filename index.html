@@ -51,30 +51,31 @@
         <p class="hero-coming-soon">Coming soon to the App Store</p>
 
         <!-- Phone mockup -->
+        <!-- ── SCREENSHOT CAROUSEL (v20260706c) ── -->
         <div class="hero-mockup">
           <div class="phone-frame">
-            <div class="phone-screen">
-              <div class="screen-app-icon">
-                <img src="icon-96.png" width="60" height="60" alt="Tank Care Buddy app icon" style="border-radius:14px;display:block;">
-              </div>
-              <div class="screen-label">Tank Care Buddy</div>
-              <div class="screen-cards">
-                <div class="screen-card">
-                  <div class="screen-card-dot"></div>
-                  <span>75 gal Planted Community</span>
-                </div>
-                <div class="screen-card">
-                  <div class="screen-card-dot green"></div>
-                  <span>10 gal Shrimp Tank</span>
-                </div>
-                <div class="screen-card">
-                  <div class="screen-card-dot gold"></div>
-                  <span>Water change due today</span>
+            <div class="phone-screen phone-screen--carousel">
+              <div class="ss-carousel" id="ss-carousel" aria-label="App screenshots">
+                <div class="ss-track" id="ss-track">
+                  <div class="ss-slide"><img src="screenshots/screen-01.jpg" alt="Tank Care Buddy — home screen" draggable="false"></div>
+                  <div class="ss-slide"><img src="screenshots/screen-02.jpg" alt="Tank Care Buddy — tank details" draggable="false"></div>
+                  <div class="ss-slide"><img src="screenshots/screen-03.jpg" alt="Tank Care Buddy — water care" draggable="false"></div>
+                  <div class="ss-slide"><img src="screenshots/screen-04.jpg" alt="Tank Care Buddy — equipment" draggable="false"></div>
+                  <div class="ss-slide"><img src="screenshots/screen-05.jpg" alt="Tank Care Buddy — reminders" draggable="false"></div>
+                  <div class="ss-slide"><img src="screenshots/screen-06.jpg" alt="Tank Care Buddy — first tank guide" draggable="false"></div>
+                  <div class="ss-slide"><img src="screenshots/screen-07.jpg" alt="Tank Care Buddy — history" draggable="false"></div>
+                  <div class="ss-slide"><img src="screenshots/screen-08.jpg" alt="Tank Care Buddy — browse species" draggable="false"></div>
                 </div>
               </div>
-              <div class="screen-placeholder-text">
-                <!-- PLACEHOLDER: Replace with real screenshot -->
-                App screenshot coming soon
+              <div class="ss-dots" id="ss-dots" role="tablist" aria-label="Screenshot navigation">
+                <button class="ss-dot ss-dot--active" role="tab" aria-selected="true" data-idx="0"></button>
+                <button class="ss-dot" role="tab" aria-selected="false" data-idx="1"></button>
+                <button class="ss-dot" role="tab" aria-selected="false" data-idx="2"></button>
+                <button class="ss-dot" role="tab" aria-selected="false" data-idx="3"></button>
+                <button class="ss-dot" role="tab" aria-selected="false" data-idx="4"></button>
+                <button class="ss-dot" role="tab" aria-selected="false" data-idx="5"></button>
+                <button class="ss-dot" role="tab" aria-selected="false" data-idx="6"></button>
+                <button class="ss-dot" role="tab" aria-selected="false" data-idx="7"></button>
               </div>
             </div>
           </div>
@@ -306,5 +307,94 @@
 
   <script src="shared.js?v=20260702a"></script>
   <script src="waitlist.js?v=20260702e"></script>
+
+  <!-- Screenshot carousel (v20260706c) -->
+  <script>
+  (function() {
+    var track = document.getElementById('ss-track');
+    var dots  = document.querySelectorAll('.ss-dot');
+    if (!track || !dots.length) return;
+
+    var total   = 8;
+    var current = 0;
+    var autoTimer;
+
+    function goTo(idx, resetAuto) {
+      idx = ((idx % total) + total) % total;
+      current = idx;
+      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+      dots.forEach(function(d, i) {
+        var active = i === idx;
+        d.classList.toggle('ss-dot--active', active);
+        d.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      if (resetAuto) startAuto();
+    }
+
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(function() { goTo(current + 1, false); }, 3400);
+    }
+
+    // Dot clicks
+    dots.forEach(function(d) {
+      d.addEventListener('click', function() {
+        goTo(parseInt(d.dataset.idx, 10), true);
+      });
+    });
+
+    // Touch / drag swipe
+    var carousel = document.getElementById('ss-carousel');
+    var startX = null;
+    var dragDx = 0;
+    var dragging = false;
+
+    function onStart(x) {
+      startX = x;
+      dragDx = 0;
+      dragging = true;
+      clearInterval(autoTimer);
+      track.style.transition = 'none';
+    }
+    function onMove(x) {
+      if (!dragging || startX === null) return;
+      dragDx = x - startX;
+      var base = -(current * 100);
+      var pct = base + (dragDx / carousel.offsetWidth * 100);
+      track.style.transform = 'translateX(' + pct + '%)';
+    }
+    function onEnd() {
+      if (!dragging) return;
+      dragging = false;
+      track.style.transition = '';
+      if (Math.abs(dragDx) > 40) {
+        goTo(dragDx < 0 ? current + 1 : current - 1, true);
+      } else {
+        goTo(current, true);
+      }
+      startX = null;
+    }
+
+    carousel.addEventListener('touchstart', function(e) { onStart(e.touches[0].clientX); }, { passive: true });
+    carousel.addEventListener('touchmove',  function(e) { onMove(e.touches[0].clientX); }, { passive: true });
+    carousel.addEventListener('touchend',   onEnd);
+    carousel.addEventListener('mousedown',  function(e) { onStart(e.clientX); e.preventDefault(); });
+    document.addEventListener('mousemove',  function(e) { if (dragging) onMove(e.clientX); });
+    document.addEventListener('mouseup',    onEnd);
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+    carousel.addEventListener('mouseleave', function() { startAuto(); });
+
+    // Keyboard arrows for accessibility
+    carousel.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft')  goTo(current - 1, true);
+      if (e.key === 'ArrowRight') goTo(current + 1, true);
+    });
+    carousel.setAttribute('tabindex', '0');
+
+    startAuto();
+  })();
+  </script>
 </body>
 </html>
