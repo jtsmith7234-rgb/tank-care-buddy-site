@@ -1153,6 +1153,17 @@ button { cursor: pointer; background: none; border: none; }
   max-width: none;
 }
 
+.hero-beta-copy {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-16);
+  margin-top: 0;
+  text-align: center;
+  max-width: 36ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ── HERO COMING-SOON LINE ───────────────────────────────────── */
 .hero-coming-soon {
   font-size: var(--text-xs);
