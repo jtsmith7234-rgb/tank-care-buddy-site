@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260812e" />
 </head>
 <body>
 
@@ -33,13 +33,14 @@
         <p class="page-hero-label">Legal</p>
         <h1>Privacy &amp; Legal</h1>
         <p>
-          Tank Care Buddy is a local-first app — your tank data stays on your device.
-          This page covers our privacy policy, terms of use, developer information,
-          and third-party attributions required for App Store transparency.
+          Tank Care Buddy collects nothing. Everything you enter stays on your device,
+          and the app sends no data anywhere — there is no account, no server, and no
+          cloud storage. This page covers our privacy policy, terms of use, developer
+          information, and third-party attributions required for App Store transparency.
         </p>
         <p class="page-hero-meta">
-          <strong>Last updated:</strong> July 6, 2026 &nbsp;|&nbsp;
-          <strong>Effective date:</strong> July 6, 2026
+          <strong>Last updated:</strong> August 12, 2026 &nbsp;|&nbsp;
+          <strong>Effective date:</strong> August 12, 2026
         </p>
       </div>
     </section>
@@ -67,15 +68,41 @@
                ═══════════════════════════════════════════════════ -->
           <h2 id="privacy-policy">Privacy Policy</h2>
 
+          <div class="legal-callout">
+            <p class="legal-callout-title">The short version</p>
+            <ul>
+              <li><strong>The app collects nothing about you — nothing at all.</strong> No name, no email, no account, no location, no device identifier, and no usage tracking.</li>
+              <li><strong>Your tank data never leaves your device.</strong> It is written to your phone or tablet and stays there.</li>
+              <li><strong>There is no server.</strong> We do not operate a backend, database, or cloud storage of any kind for app data. There is nothing for us to look at, lose, or hand over.</li>
+              <li><strong>The app makes no network requests at all.</strong> It works fully offline. Everything it needs — including fonts and all species photos — is bundled inside the app.</li>
+              <li><strong>No analytics, no ads, no tracking.</strong> No advertising identifier, no third-party SDK, no cross-app tracking.</li>
+            </ul>
+            <p class="legal-callout-foot">
+              This is a deliberate design decision, not a promise about our intentions.
+              The app has no code capable of transmitting your data. See section 1.3.
+            </p>
+          </div>
+
           <h3>1.1 Information we collect</h3>
 
-          <h4>Information you provide</h4>
+          <h4>From the app: none</h4>
           <p>
-            Tank Care Buddy is designed to work entirely on your device. All information
-            you enter — tank names, fish species, water test results, water change logs,
-            equipment records, reminder settings, and maintenance notes — is stored
-            locally on your iPhone using standard iOS storage. We do not automatically
-            transmit or receive this data.
+            <strong>Tank Care Buddy does not collect, transmit, receive, sell, share, or
+            store any information about you or your aquariums.</strong> Everything you
+            enter — tank names, fish species, water test results, water change logs,
+            equipment records, dosing records, reminder settings, photos, and maintenance
+            notes — is written only to local storage on the device you are using, and is
+            never sent anywhere.
+          </p>
+          <p>
+            The app does not ask you to create an account, sign in, or provide an email
+            address. It does not read your contacts, photos library, location, calendar,
+            health data, or clipboard. It does not generate or transmit a device
+            identifier, advertising identifier, or any other persistent identifier.
+          </p>
+          <p>
+            We have no ability to access your tank data. We could not produce it if asked,
+            because we never receive it and hold no copy of it.
           </p>
 
           <h4>Notification permissions</h4>
@@ -88,11 +115,16 @@
 
           <h4>Usage and analytics data</h4>
           <p>
-            Tank Care Buddy does not include any third-party analytics SDK (such as Firebase,
-            Mixpanel, or similar). Apple may provide us with aggregate, anonymized
-            download and crash statistics through App Store Connect as part of
-            standard App Store participation — this data does not include personally
-            identifiable information.
+            Tank Care Buddy contains no analytics software of any kind — no Firebase, no
+            Mixpanel, no Google Analytics, no advertising SDK, and no custom telemetry.
+            The app does not measure or report what you do inside it.
+          </p>
+          <p>
+            Separately, and outside of the app, Apple provides developers with aggregate,
+            anonymized App Store statistics such as total downloads and crash counts.
+            This comes from Apple, not from the app, is never linked to an individual
+            person, and we cannot use it to identify you. You can limit even this in
+            iOS Settings &rsaquo; Privacy &amp; Security &rsaquo; Analytics &amp; Improvements.
           </p>
 
           <h4>Crash reports</h4>
@@ -104,68 +136,171 @@
 
           <h3>1.2 How we use your information</h3>
           <p>
-            Because all tank and care data is stored locally on your device, we do not use it —
-            it remains entirely in your control. If you contact us by email for support or
-            feedback, we use the information in your email only to respond to you and will
-            not share it with third parties.
+            We do not use your tank or care data in any way, because we never receive it.
+            It remains entirely in your control on your own device.
+          </p>
+          <p>
+            We do not and will not sell, rent, trade, or share your personal information
+            with anyone, for any purpose. We do not use your data to train machine learning
+            or artificial intelligence models. There is no circumstance in which app data
+            is disclosed to a third party, because no such data exists on our side.
+          </p>
+          <p>
+            If you choose to email us for support, we use the contents of your email only
+            to reply to you. We do not add you to a mailing list without your consent and
+            we do not share your address with anyone.
           </p>
 
           <h3>1.3 Data storage and security</h3>
           <p>
-            All data you enter is stored on your device using <code>localStorage</code> within
-            the app's private WKWebView sandbox. This storage is protected by iOS's standard
-            app sandboxing. We do not operate servers that store your tank or care data.
+            All data you enter is stored on your device using <code>localStorage</code>
+            inside the app's private sandbox. iOS enforces that sandbox: no other app on
+            your device can read it, and neither can we. Your data is further protected by
+            your device passcode and Apple's on-device encryption.
           </p>
           <p>
-            The app provides a data export/backup feature that lets you save your data as a
-            file on your device. This file is not sent anywhere automatically — you control
-            where it is stored (Files app, iCloud Drive, AirDrop, etc.).
+            <strong>We operate no servers, databases, or cloud storage for app data
+            whatsoever.</strong> There is no backend to breach, no credentials to steal,
+            and no central copy of anyone's information to expose.
+          </p>
+          <p>
+            This is enforced technically, not just by policy. The app ships with a
+            Content Security Policy that sets <code>connect-src 'none'</code>, which
+            instructs the operating system's web engine to block all outbound network
+            connections from the app — every request, upload, and background transmission.
+            All fonts and species images are bundled inside the app rather than fetched
+            from the internet, so the app functions completely offline and contacts no
+            server, including ours.
+          </p>
+          <p>
+            The app provides an export and backup feature that saves your data as a file
+            on your device. That file is never transmitted anywhere automatically. You
+            decide where it goes (Files app, iCloud Drive, AirDrop, or elsewhere), and once
+            you move it, that copy is governed by whichever service you chose and is your
+            responsibility to manage.
           </p>
 
           <h3>1.4 Third-party services</h3>
+
+          <h4>In the app: none</h4>
           <p>
-            Tank Care Buddy does not integrate with third-party services that receive your
-            personal or tank data. The app is distributed through Apple's App Store.
-            Apple's privacy practices govern the App Store experience. See
-            <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>
-            for details.
+            The app integrates with no third-party service that receives your data. It
+            contains no analytics, advertising, attribution, crash-reporting, or
+            cloud-storage service.
+          </p>
+          <p>
+            Two Apple services are involved by necessity, and neither gives us your data.
+            The app is distributed through the App Store, governed by
+            <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.
+            If you buy the optional Pro upgrade, Apple processes the payment entirely —
+            we never see or store your name, card, or billing details, and receive only
+            an anonymous confirmation from Apple that a valid purchase exists.
+          </p>
+
+          <h4>On this website: analytics only</h4>
+          <p>
+            This website (tankcarebuddy.com) is separate from the app and is not quite as
+            private as the app. There is no sign-up form, no login, no comments, and no
+            newsletter — the website never asks you to type anything. In the interest of
+            full transparency, two third parties are involved when you load a page here:
+          </p>
+          <ul>
+            <li>
+              <strong>Google Analytics 4</strong> runs on the pages of this website,
+              including this one. It records anonymized visit statistics such as page
+              views, approximate region, referring site, and browser type, and it sets
+              cookies to do so. It is used only to understand general website traffic.
+              It is not present in the app and cannot see anything about your aquariums.
+              See
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>,
+              and note you may block it with any standard browser or content-blocker setting.
+            </li>
+            <li>
+              <strong>Google Fonts</strong> are loaded from Google's servers on this
+              website, which means your IP address is visible to Google when a page loads.
+              Inside the app, these same fonts are bundled locally and no such request is
+              made.
+            </li>
+          </ul>
+          <p>
+            That is the complete list. This website sets no advertising cookies, hosts no
+            ads, and runs no other third-party script. Nothing collected here is ever
+            combined with app data, because no app data exists to combine it with.
+          </p>
+          <p>
+            The only way to send us personal information is to deliberately email us.
           </p>
 
           <h3>1.5 Data retention</h3>
           <p>
-            Your data is retained on your device until you delete the app or use the
-            in-app "Clear local data" option in Settings. Deleting the app from your iPhone
-            removes all locally stored data. Any backup files you export remain wherever
-            you saved them and are your responsibility to manage.
+            We retain no app data, so there is no retention period on our side and nothing
+            for us to delete. Your data lives on your device until you remove it.
+          </p>
+          <p>
+            Your data stays on your device until you use "Clear local data" in Settings or
+            delete the app. Deleting the app removes all of its locally stored data
+            permanently — that action cannot be undone by us, since we hold no copy, so
+            export a backup first if you want to keep your history.
+          </p>
+          <p>
+            Any backup file you exported remains wherever you saved it and is yours to
+            manage. Support emails you send us are kept only as long as needed to help you,
+            and are deleted on request.
           </p>
 
           <h3>1.6 Your rights</h3>
           <p>
-            Because we do not collect or store your personal data on our servers, most
-            data-rights requests can be fulfilled entirely by you, on your device:
+            Privacy laws including the GDPR, the UK GDPR, and the CCPA/CPRA give you rights
+            over your personal information. Because we never collect it, you already hold
+            every one of those rights directly and can exercise them yourself, instantly,
+            without asking us:
           </p>
           <ul>
-            <li><strong>Access:</strong> All your data is visible inside the app.</li>
-            <li><strong>Export:</strong> Use the export/backup feature in Settings.</li>
-            <li><strong>Delete:</strong> Use "Clear local data" in Settings, or delete the app from your device.</li>
+            <li><strong>Access:</strong> All of your data is visible inside the app at any time.</li>
+            <li><strong>Portability / export:</strong> Use the export and backup feature in Settings to get a complete copy as a file.</li>
+            <li><strong>Correction:</strong> Edit any entry directly in the app.</li>
+            <li><strong>Deletion:</strong> Use "Clear local data" in Settings, or delete the app.</li>
+            <li><strong>Opt out of sale or sharing:</strong> Nothing to opt out of — we have never sold or shared personal information and do not.</li>
+            <li><strong>Non-discrimination:</strong> Every feature you paid for works the same regardless of any privacy choice you make.</li>
           </ul>
           <p>
-            If you have contacted us by email and would like that correspondence deleted,
-            email us and we will honor the request promptly.
+            If you emailed us and want that correspondence deleted, write to
+            <a href="mailto:support@tankcarebuddy.com">support@tankcarebuddy.com</a>
+            and we will delete it promptly. That is the only personal information we could
+            ever hold about you.
           </p>
 
           <h3>1.7 Children's privacy</h3>
           <p>
-            Tank Care Buddy is not directed at children under 13. We do not knowingly
-            collect personal information from children. If you believe a child has
-            provided us information, please contact us and we will address it promptly.
+            Tank Care Buddy is not directed at children under 13. Because the app collects
+            no personal information from anyone, it cannot collect personal information
+            from a child. The app contains no ads, no external links to untrusted content,
+            no chat, and no social features. If you believe a child has sent us personal
+            information by email, contact us and we will delete it promptly.
           </p>
 
           <h3>1.8 Changes to this policy</h3>
           <p>
-            We may update this Privacy Policy from time to time. When we do, we will update
-            the "Last updated" date at the top of this page. Continued use of the app after
-            a change constitutes acceptance of the updated policy.
+            We may update this Privacy Policy from time to time — for example to describe a
+            new feature or to improve clarity. When we do, we will update the "Last updated"
+            date at the top of this page. Continued use of the app after a change
+            constitutes acceptance of the updated policy.
+          </p>
+          <p>
+            <strong>Our commitment:</strong> if a future version of Tank Care Buddy ever
+            adds an optional feature that requires sending data off your device — such as
+            syncing between your own devices — it will be clearly described here before
+            release, it will be off unless you deliberately turn it on, and it will never be
+            applied retroactively to data already on your device. We will not quietly begin
+            collecting information that this policy says we do not collect.
+          </p>
+
+          <h3>1.9 Contact about privacy</h3>
+          <p>
+            Questions about this policy, or about privacy generally, can be sent to
+            <a href="mailto:support@tankcarebuddy.com">support@tankcarebuddy.com</a>.
+            We are based in Huntsville, Alabama, USA. Because we hold no user data, we have
+            not appointed a data protection officer and are not required to.
           </p>
 
           <div class="legal-divider"></div>
@@ -208,12 +343,24 @@
             or reminder schedules.
           </p>
 
-          <h3>2.5 Data loss</h3>
+          <h3>2.5 Data loss and your responsibility to back up</h3>
           <p>
-            Because all data is stored locally on your device, we are not responsible for
-            data loss due to device failure, iOS updates, app deletion, or other circumstances
-            outside our control. We strongly recommend using the built-in export/backup
-            feature regularly to preserve your data.
+            <strong>Because your data is stored only on your device and we keep no copy of
+            it, you are solely responsible for backing it up.</strong> We cannot recover,
+            restore, or retrieve your data under any circumstances — not because we decline
+            to, but because we have never had access to it.
+          </p>
+          <p>
+            To the fullest extent permitted by law, we are not responsible for data loss
+            arising from device loss, theft, damage, or failure; from deleting or
+            reinstalling the app; from iOS updates or changes to iOS storage behavior; from
+            storage being cleared by the operating system to reclaim space; from a device
+            reset or transfer to a new device; or from any other cause.
+          </p>
+          <p>
+            We strongly recommend using the built-in export and backup feature regularly,
+            and keeping the exported file somewhere durable. This is the only way to
+            preserve your history.
           </p>
 
           <h3>2.6 Disclaimer of warranties</h3>
@@ -226,10 +373,22 @@
 
           <h3>2.7 Limitation of liability</h3>
           <p>
-            To the fullest extent permitted by applicable law, The Pop Umbrella shall not be
-            liable for any indirect, incidental, special, consequential, or punitive damages
-            arising from your use of the App. Our total liability for any claim related to
-            the App shall not exceed the amount you paid for the App (if any).
+            To the fullest extent permitted by applicable law, James Timothy Smith, doing
+            business as The Pop Umbrella, shall not be liable for any indirect, incidental,
+            special, consequential, exemplary, or punitive damages arising from your use of
+            the App, including without limitation loss of data, loss of profits, harm to or
+            loss of livestock, plants, or equipment, or damage to property. Our total
+            aggregate liability for any and all claims related to the App shall not exceed
+            the amount you actually paid for the App and any in-app purchase, or ten United
+            States dollars, whichever is greater.
+          </p>
+          <p>
+            You acknowledge that the App stores your data only on your own device, that no
+            data is transmitted to or held by us, and that we therefore have no custody or
+            control over your information and no ability to recover it. Some jurisdictions
+            do not allow certain limitations of liability, so parts of this section may not
+            apply to you; in that case our liability is limited to the smallest amount
+            permitted by law.
           </p>
 
           <h3>2.8 Governing law</h3>
@@ -284,7 +443,7 @@
           <div class="legal-contact-card">
             <div class="legal-contact-row">
               <span class="legal-contact-label">Developer</span>
-              <span>The Pop Umbrella</span>
+              <span>James Timothy Smith, d/b/a The Pop Umbrella</span>
             </div>
             <div class="legal-contact-row">
               <span class="legal-contact-label">App name</span>
@@ -340,7 +499,9 @@
             <a href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener">Inter</a>
             from Google Fonts, both licensed under the
             <a href="https://scripts.sil.org/OFL" target="_blank" rel="noopener">SIL Open Font License</a>.
-            These fonts are used only on the website — not embedded in the app binary.
+            Inside the app, both typefaces are bundled locally under that license so the
+            app makes no request to Google. On this website they are loaded from Google's
+            font servers — see section 1.4.
           </p>
 
           <h3>Species reference data</h3>
@@ -348,9 +509,12 @@
             Fish species care profiles in Tank Care Buddy are compiled from publicly
             available hobbyist reference materials and manufacturer guidelines.
             Individual sources are credited where applicable. Images used in species
-            profiles are sourced under compatible licenses — see our
-            <a href="https://www.perplexity.ai/computer/a" target="_blank" rel="noopener">image license audit</a>
-            on file with the development record.
+            profiles are used under Creative Commons or public-domain licenses, primarily
+            from Wikimedia Commons, with each image's source and license recorded in our
+            internal image licensing audit. All species photos are bundled inside the app,
+            so viewing them does not contact any external server. To request attribution
+            details for a specific image, contact
+            <a href="mailto:support@tankcarebuddy.com">support@tankcarebuddy.com</a>.
           </p>
 
           <div class="legal-divider"></div>
@@ -362,8 +526,10 @@
 
           <h3>Data collection — App Store privacy label</h3>
           <p>
-            Per Apple's App Store privacy nutrition label requirements, Tank Care Buddy
-            collects the following data:
+            Apple requires developers to declare what data an app collects. Tank Care
+            Buddy's declaration is <strong>"Data Not Collected"</strong> — the app collects
+            no data at all. For completeness, here is every category people commonly ask
+            about and its true status:
           </p>
 
           <table class="legal-table">
@@ -377,28 +543,58 @@
             </thead>
             <tbody>
               <tr>
-                <td>Tank &amp; care data (tank names, water tests, etc.)</td>
-                <td>Stored on device only</td>
-                <td>Core app functionality</td>
-                <td>No — device only</td>
+                <td data-label="Data type">Tank &amp; care data (tank names, species, water tests, notes)</td>
+                <td data-label="Collected?"><strong>Not collected</strong> — stays on your device</td>
+                <td data-label="Purpose">Core app functionality, on device</td>
+                <td data-label="Linked to identity?">No</td>
               </tr>
               <tr>
-                <td>Crash data</td>
-                <td>Anonymized, via Apple</td>
-                <td>App stability</td>
-                <td>No</td>
+                <td data-label="Data type">Contact info (name, email, phone, address)</td>
+                <td data-label="Collected?"><strong>Not collected</strong> — never requested</td>
+                <td data-label="Purpose">Not applicable</td>
+                <td data-label="Linked to identity?">No</td>
               </tr>
               <tr>
-                <td>Download &amp; usage analytics</td>
-                <td>Anonymized aggregate, via Apple</td>
-                <td>Development insights</td>
-                <td>No</td>
+                <td data-label="Data type">Identifiers (user ID, device ID, advertising ID)</td>
+                <td data-label="Collected?"><strong>Not collected</strong> — none generated or sent</td>
+                <td data-label="Purpose">Not applicable</td>
+                <td data-label="Linked to identity?">No</td>
               </tr>
               <tr>
-                <td>Email (if you contact support)</td>
-                <td>Only if you email us</td>
-                <td>Customer support</td>
-                <td>Yes — your email address</td>
+                <td data-label="Data type">Location</td>
+                <td data-label="Collected?"><strong>Not collected</strong> — permission never requested</td>
+                <td data-label="Purpose">Not applicable</td>
+                <td data-label="Linked to identity?">No</td>
+              </tr>
+              <tr>
+                <td data-label="Data type">Usage data / product interaction</td>
+                <td data-label="Collected?"><strong>Not collected</strong> — no analytics in the app</td>
+                <td data-label="Purpose">Not applicable</td>
+                <td data-label="Linked to identity?">No</td>
+              </tr>
+              <tr>
+                <td data-label="Data type">Photos, contacts, health, financial info</td>
+                <td data-label="Collected?"><strong>Not collected</strong> — no access requested</td>
+                <td data-label="Purpose">Not applicable</td>
+                <td data-label="Linked to identity?">No</td>
+              </tr>
+              <tr>
+                <td data-label="Data type">Purchases</td>
+                <td data-label="Collected?">Handled entirely by Apple</td>
+                <td data-label="Purpose">Unlocking Pro features</td>
+                <td data-label="Linked to identity?">No — we receive only an anonymous validity confirmation</td>
+              </tr>
+              <tr>
+                <td data-label="Data type">Crash &amp; download statistics</td>
+                <td data-label="Collected?">Provided by Apple, aggregated and anonymized</td>
+                <td data-label="Purpose">App stability and general insight</td>
+                <td data-label="Linked to identity?">No — comes from Apple, not from the app</td>
+              </tr>
+              <tr>
+                <td data-label="Data type">Email (only if you write to us)</td>
+                <td data-label="Collected?">Only what you choose to send</td>
+                <td data-label="Purpose">Answering your message</td>
+                <td data-label="Linked to identity?">Yes — deleted on request</td>
               </tr>
             </tbody>
           </table>
@@ -413,9 +609,15 @@
 
           <h3>No tracking or cross-app data sharing</h3>
           <p>
-            Tank Care Buddy does not use any advertising identifier (IDFA), does not
-            participate in cross-app tracking, and does not share your data with any
-            advertising or analytics networks.
+            Tank Care Buddy does not use the advertising identifier (IDFA), does not
+            present App Tracking Transparency prompts because it has no reason to, does not
+            participate in cross-app or cross-site tracking, contains no advertising, and
+            shares no data with any advertising, analytics, or data-broker network. It
+            performs no fingerprinting and creates no persistent identifier of any kind.
+          </p>
+          <p>
+            The app also makes no network requests whatsoever, which is verified as part of
+            our release process before each submission.
           </p>
 
           <h3>In-app purchases</h3>

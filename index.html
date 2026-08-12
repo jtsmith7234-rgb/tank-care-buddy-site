@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260812e" />
 </head>
 <body>
 
@@ -38,7 +38,7 @@
       <div class="container text-center">
         <div class="hero-eyebrow">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="5"/></svg>
-          Now testing on iPhone with TestFlight
+          Coming soon to the App Store
         </div>
 
         <h1 class="hero-title">
@@ -50,14 +50,39 @@
           and never miss a reminder — all in one place. No spreadsheets.
         </p>
 
-        <p class="hero-beta-copy">Try Tank Care Buddy early and share honest feedback before the App Store launch.</p>
+        <p class="hero-beta-copy">Submitted to the App Store and awaiting review. Free to download, with an optional one-time Pro upgrade.</p>
         <div class="hero-actions">
-          <a href="https://testflight.apple.com/join/w2BrmArJ" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_join_beta',{cta_location:'hero'});">
-            Join the iPhone Beta
+          <!-- ═══════════════════════════════════════════════════════════════
+               LAUNCH CTA — PLACEHOLDER (app is submitted, listing not live yet)
+               ───────────────────────────────────────────────────────────────
+               TO GO LIVE when the App Store listing is approved:
+                 1. Delete the <span class="btn-soon"> block below.
+                 2. Uncomment the <a> block below it.
+                 3. Replace APP_STORE_URL with your real link, which looks like
+                    https://apps.apple.com/us/app/tank-care-buddy/id1234567890
+                 4. Repeat both steps in the bottom CTA banner near the end of
+                    this file (search for "btn-soon").
+               Recommended: swap the icon for Apple's official "Download on the
+               App Store" badge, downloaded from Apple's marketing guidelines at
+               https://developer.apple.com/app-store/marketing/guidelines/ .
+               Do not recreate Apple's badge or logo by hand — Apple requires the
+               official artwork, so this placeholder uses a neutral icon instead.
+               ═══════════════════════════════════════════════════════════════ -->
+          <span class="btn-soon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg>
+            <span class="btn-soon-label">
+              <span class="btn-soon-sub">Coming soon</span>
+              <span class="btn-soon-main">On the App Store</span>
+            </span>
+          </span>
+          <!--
+          <a href="APP_STORE_URL" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_app_store',{cta_location:'hero'});">
+            Download on the App Store
           </a>
+          -->
           <a href="faq.html" class="btn btn-ghost">Learn more</a>
         </div>
-        <p class="hero-coming-soon">Requires iPhone and Apple TestFlight.</p>
+        <p class="hero-coming-soon">Free to download. Requires iPhone.</p>
 
         <!-- Phone mockup -->
         <!-- ── SCREENSHOT CAROUSEL (v20260706c) ── -->
@@ -292,19 +317,31 @@
     <section class="section">
       <div class="container">
         <div class="cta-banner" id="beta-cta">
-          <div class="cta-badge">Beta</div>
-          <h2>Help test Tank Care Buddy</h2>
+          <div class="cta-badge">Coming soon</div>
+          <h2>Tank Care Buddy is on the way</h2>
           <p>
-            If you have an iPhone and a freshwater tank, you can join the beta through TestFlight.
-            I'm looking for honest feedback on reminders, water test logging, and overall ease of use.
+            Tank Care Buddy is finished and submitted to the App Store. As soon as it is
+            approved, this page will link straight to the download. Everything you track
+            stays on your iPhone — no account, and nothing sent anywhere.
           </p>
-          <a href="https://testflight.apple.com/join/w2BrmArJ" class="btn-appstore-white" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_join_beta',{cta_location:'banner'});">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          <!-- LAUNCH CTA — PLACEHOLDER. See the instructions in the hero section
+               at the top of this file for the two-step swap to the live link. -->
+          <span class="btn-soon btn-soon--on-dark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg>
+            <span class="btn-soon-label">
+              <span class="btn-soon-sub">Free · iPhone only</span>
+              <span class="btn-soon-main">Coming soon to the App Store</span>
+            </span>
+          </span>
+          <!--
+          <a href="APP_STORE_URL" class="btn-appstore-white" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_app_store',{cta_location:'banner'});">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg>
             <span class="btn-appstore-label">
               <span class="btn-appstore-sub">Free · iPhone only</span>
-              <span class="btn-appstore-main">Open TestFlight Beta</span>
+              <span class="btn-appstore-main">Download on the App Store</span>
             </span>
           </a>
+          -->
         </div>
       </div>
     </section>
@@ -315,7 +352,6 @@
   <div id="footer-placeholder"></div>
 
   <script src="shared.js?v=20260702a"></script>
-  <script src="waitlist.js?v=20260702e"></script>
 
   <!-- Screenshot carousel (v20260706c) -->
   <script>
