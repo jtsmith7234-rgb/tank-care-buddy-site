@@ -1,3 +1,7 @@
+/* Tank Care Buddy — Website
+ * Copyright (c) 2026 James Timothy Smith. All rights reserved.
+ * Proprietary. Not open source. See LICENSE.
+ */
 /* ============================================================
    Tank Care Buddy — Shared header / footer injection + utils
    v20260702a

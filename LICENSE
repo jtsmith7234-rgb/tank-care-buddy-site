@@ -1,0 +1,120 @@
+Tank Care Buddy — Website
+Proprietary Software License
+
+Copyright (c) 2026 James Timothy Smith. All rights reserved.
+
+===============================================================================
+1. OWNERSHIP
+===============================================================================
+
+Tank Care Buddy, including this repository and all of its contents — source
+code, design, layout, text, artwork, icons, data files, documentation, and
+compiled application binaries (collectively, "the Software") — is the exclusive
+property of James Timothy Smith ("the Owner").
+
+The Software is protected by United States copyright law and by international
+copyright treaties. Publishing this repository so that it can be viewed does
+NOT place the Software in the public domain and does NOT grant any license to
+use it. All rights not expressly granted below are reserved by the Owner.
+
+===============================================================================
+2. WHAT YOU MAY DO
+===============================================================================
+
+You may view and read this repository for personal, non-commercial reference
+and educational purposes only.
+
+===============================================================================
+3. WHAT YOU MAY NOT DO
+===============================================================================
+
+Without the Owner's prior written permission, you may NOT:
+
+  a) Copy, reproduce, or duplicate the Software or any substantial portion
+     of it;
+
+  b) Modify, adapt, translate, or create derivative works based on the
+     Software;
+
+  c) Distribute, publish, sublicense, sell, rent, lease, or otherwise transfer
+     the Software or access to it;
+
+  d) Deploy, host, or republish the Software or any substantial portion of it
+     at any domain or address other than tankcarebuddy.com;
+
+  e) Use the Software or any part of it in any other product, application,
+     website, or service, whether commercial or non-commercial;
+
+  f) Use the name "Tank Care Buddy", the Tank Care Buddy logo, app icon, or
+     any confusingly similar name or mark, in connection with any product or
+     service;
+
+  g) Remove, obscure, or alter any copyright, trademark, or proprietary notice
+     contained in the Software;
+
+  h) Reverse engineer, decompile, or disassemble any compiled portion of the
+     Software, except to the limited extent that such activity cannot lawfully
+     be prohibited;
+
+  i) Use the Software, in whole or in part, as training data for any machine
+     learning model, artificial intelligence system, or automated code
+     generation tool.
+
+===============================================================================
+4. THIRD-PARTY COMPONENTS
+===============================================================================
+
+This repository contains third-party components that are licensed separately by
+their respective owners, and are NOT covered by this license. Those components
+remain subject to their own license terms, and nothing in this license
+restricts your rights under them:
+
+  - Lucide Icons (inline SVG icon paths)
+      ISC License, (c) Lucide Contributors
+  - Inter and Plus Jakarta Sans typefaces (loaded from Google Fonts)
+      SIL Open Font License 1.1
+
+App screenshots in screenshots/ depict the Tank Care Buddy application and are
+owned by the Owner. Any species photographs visible within those screenshots are
+used under Creative Commons and public domain licenses sourced from Wikimedia
+Commons; their attribution is documented in the Tank Care Buddy application
+repository under docs/licenses/.
+
+===============================================================================
+5. NO WARRANTY
+===============================================================================
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+OWNER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Tank Care Buddy provides general aquarium care guidance for informational
+purposes only. It is not veterinary advice. The Owner is not responsible for
+the health of any animal or the condition of any aquarium.
+
+===============================================================================
+6. ENFORCEMENT AND GOVERNING LAW
+===============================================================================
+
+Any unauthorized use of the Software constitutes copyright infringement and may
+result in civil liability and criminal penalties under applicable law. The
+Owner reserves every legal and equitable remedy available, including injunctive
+relief and recovery of damages, costs, and attorneys' fees.
+
+This license is governed by the laws of the State of Alabama and the United
+States of America, without regard to conflict-of-law principles.
+
+===============================================================================
+7. PERMISSIONS AND CONTACT
+===============================================================================
+
+To request written permission for any use not allowed above, contact:
+
+    support@tankcarebuddy.com
+
+===============================================================================
+
+Last updated: August 12, 2026
