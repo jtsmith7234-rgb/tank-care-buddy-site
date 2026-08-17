@@ -12,9 +12,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Tank Care Buddy — Simple Aquarium Tracking</title>
-  <meta name="description" content="Tank Care Buddy helps fish keepers track water changes, log tests, monitor fish health, and stay on top of tank maintenance — all in one clean app." />
+  <meta name="description" content="Tank Care Buddy is a free iPhone app for fish keepers: track water changes, log tests, monitor fish health, and never miss tank maintenance. No account, no subscription — your data stays on your phone." />
   <meta property="og:title" content="Tank Care Buddy — Simple Aquarium Tracking" />
-  <meta property="og:description" content="Track your tanks, log water changes, browse fish species, and never miss a maintenance reminder." />
+  <meta property="og:description" content="Free on the App Store. Track your tanks, log water changes, browse fish species, and never miss a maintenance reminder." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tankcarebuddy.com" />
   <meta property="og:image" content="https://tankcarebuddy.com/icon-96.png" />
@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260812e" />
+  <link rel="stylesheet" href="style.css?v=20260817a" />
 </head>
 <body>
 
@@ -36,9 +36,9 @@
   <main>
     <section class="hero">
       <div class="container text-center">
-        <div class="hero-eyebrow">
+        <div class="hero-eyebrow hero-eyebrow--live">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="5"/></svg>
-          Coming soon to the App Store
+          Now available on the App Store
         </div>
 
         <h1 class="hero-title">
@@ -50,39 +50,21 @@
           and never miss a reminder — all in one place. No spreadsheets.
         </p>
 
-        <p class="hero-beta-copy">Submitted to the App Store and awaiting review. Free to download, with an optional one-time Pro upgrade.</p>
+        <p class="hero-beta-copy">Free to download, with everything you need for your first tank. A one-time&nbsp;$2.99 upgrade unlocks unlimited tanks — no subscription, ever.</p>
         <div class="hero-actions">
           <!-- ═══════════════════════════════════════════════════════════════
-               LAUNCH CTA — PLACEHOLDER (app is submitted, listing not live yet)
-               ───────────────────────────────────────────────────────────────
-               TO GO LIVE when the App Store listing is approved:
-                 1. Delete the <span class="btn-soon"> block below.
-                 2. Uncomment the <a> block below it.
-                 3. Replace APP_STORE_URL with your real link, which looks like
-                    https://apps.apple.com/us/app/tank-care-buddy/id1234567890
-                 4. Repeat both steps in the bottom CTA banner near the end of
-                    this file (search for "btn-soon").
-               Recommended: swap the icon for Apple's official "Download on the
-               App Store" badge, downloaded from Apple's marketing guidelines at
-               https://developer.apple.com/app-store/marketing/guidelines/ .
-               Do not recreate Apple's badge or logo by hand — Apple requires the
-               official artwork, so this placeholder uses a neutral icon instead.
+               LIVE App Store CTA. The listing went live 17 August 2026.
+               app-store-badge.svg is Apple's official, unmodified badge
+               artwork from https://developer.apple.com/app-store/marketing/guidelines/
+               Do not redraw, recolour, stretch or add effects to it — Apple
+               requires the artwork be used exactly as supplied.
                ═══════════════════════════════════════════════════════════════ -->
-          <span class="btn-soon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg>
-            <span class="btn-soon-label">
-              <span class="btn-soon-sub">Coming soon</span>
-              <span class="btn-soon-main">On the App Store</span>
-            </span>
-          </span>
-          <!--
-          <a href="APP_STORE_URL" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_app_store',{cta_location:'hero'});">
-            Download on the App Store
+          <a href="https://apps.apple.com/us/app/tank-care-buddy/id6788157041" class="appstore-badge-link" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_app_store',{cta_location:'hero'});">
+            <img src="app-store-badge.svg" alt="Download Tank Care Buddy on the App Store" width="162" height="54" />
           </a>
-          -->
           <a href="faq.html" class="btn btn-ghost">Learn more</a>
         </div>
-        <p class="hero-coming-soon">Free to download. Requires iPhone.</p>
+        <p class="hero-coming-soon">Free on the App Store. Requires iPhone.</p>
 
         <!-- Phone mockup -->
         <!-- ── SCREENSHOT CAROUSEL (v20260706c) ── -->
@@ -242,6 +224,62 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════════ PRICING
+         Mirrors the in-app paywall exactly. The free tier is one tank
+         (FREE_TIER_LIMIT = 1 in app.js); Pro is the four lines listed in
+         _showPaywallModal(). If either changes in the app, change it here too. -->
+    <section class="section section--alt" id="pricing">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Pricing</p>
+          <h2 class="section-title">Start free. Upgrade once, if you want to.</h2>
+          <p class="section-sub">No subscription, no account, no ads. Buy Pro once and it is yours for good.</p>
+        </div>
+
+        <div class="pricing-grid">
+
+          <div class="price-card">
+            <div class="price-card-head">
+              <h3 class="price-name">Free</h3>
+              <div class="price-amount">$0</div>
+              <p class="price-note">Everything below, for one tank</p>
+            </div>
+            <ul class="price-list">
+              <li>One tank</li>
+              <li>Water changes, tests and dosing logs</li>
+              <li>Livestock list and fish species guide</li>
+              <li>Maintenance reminders</li>
+              <li>Graphs and full history</li>
+            </ul>
+            <p class="price-foot">Not a trial. No time limit.</p>
+          </div>
+
+          <div class="price-card price-card--pro">
+            <div class="price-tag-best">One-time purchase</div>
+            <div class="price-card-head">
+              <h3 class="price-name">Pro</h3>
+              <div class="price-amount">$2.99<span class="price-once">once</span></div>
+              <p class="price-note">Everything in Free, plus:</p>
+            </div>
+            <ul class="price-list">
+              <li>Unlimited tanks</li>
+              <li>Full history &amp; logs for every tank</li>
+              <li>Reminders for every tank</li>
+              <li>All future Pro features</li>
+            </ul>
+            <p class="price-foot">Pay once. Never charged again.</p>
+          </div>
+
+        </div>
+
+        <p class="pricing-footnote">
+          Pro is a single in-app purchase, restorable on any iPhone signed in to the same
+          Apple&nbsp;Account. Prices shown in US dollars; your local price is set by Apple.
+        </p>
+      </div>
+    </section>
+
+
 
     <!-- ═══════════════════════════════════════════════════ SOCIAL -->
     <section class="section social-section" id="social">
@@ -317,31 +355,17 @@
     <section class="section">
       <div class="container">
         <div class="cta-banner" id="beta-cta">
-          <div class="cta-badge">Coming soon</div>
-          <h2>Tank Care Buddy is on the way</h2>
+          <div class="cta-badge">Out now</div>
+          <h2>Start with your first tank today</h2>
           <p>
-            Tank Care Buddy is finished and submitted to the App Store. As soon as it is
-            approved, this page will link straight to the download. Everything you track
-            stays on your iPhone — no account, and nothing sent anywhere.
+            Tank Care Buddy is on the App Store. Set up a tank in a couple of minutes and
+            let it keep track of the rest. Everything you log stays on your iPhone — no
+            account, and nothing sent anywhere.
           </p>
-          <!-- LAUNCH CTA — PLACEHOLDER. See the instructions in the hero section
-               at the top of this file for the two-step swap to the live link. -->
-          <span class="btn-soon btn-soon--on-dark">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg>
-            <span class="btn-soon-label">
-              <span class="btn-soon-sub">Free · iPhone only</span>
-              <span class="btn-soon-main">Coming soon to the App Store</span>
-            </span>
-          </span>
-          <!--
-          <a href="APP_STORE_URL" class="btn-appstore-white" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_app_store',{cta_location:'banner'});">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg>
-            <span class="btn-appstore-label">
-              <span class="btn-appstore-sub">Free · iPhone only</span>
-              <span class="btn-appstore-main">Download on the App Store</span>
-            </span>
+          <a href="https://apps.apple.com/us/app/tank-care-buddy/id6788157041" class="appstore-badge-link" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_app_store',{cta_location:'banner'});">
+            <img src="app-store-badge.svg" alt="Download Tank Care Buddy on the App Store" width="162" height="54" />
           </a>
-          -->
+          <p class="cta-fineprint">Free · iPhone · One-time $2.99 Pro upgrade, no subscription</p>
         </div>
       </div>
     </section>
@@ -351,7 +375,7 @@
   <!-- FOOTER -->
   <div id="footer-placeholder"></div>
 
-  <script src="shared.js?v=20260702a"></script>
+  <script src="shared.js?v=20260817a"></script>
 
   <!-- Screenshot carousel (v20260706c) -->
   <script>

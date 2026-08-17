@@ -66,6 +66,7 @@
             <p class="footer-tagline">Simple aquarium tracking for every fish keeper.</p>
           </div>
           <nav class="footer-links" aria-label="Footer navigation">
+            <a href="https://apps.apple.com/us/app/tank-care-buddy/id6788157041" target="_blank" rel="noopener noreferrer">Get the app</a>
             <a href="support.html">Support</a>
             <a href="privacy.html">Privacy Policy</a>
             <a href="faq.html">FAQ</a>
